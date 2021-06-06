@@ -2,12 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>JuniorPorfirio.ResponseApi.AspNetCore</AssemblyName>
-    <RootNamespace>JuniorPorfirio.ResponseApi.AspNetCore</RootNamespace>
+    <AssemblyName>JuniorPorfirio.ResponseApi.FluentValidation</AssemblyName>
+    <RootNamespace>JuniorPorfirio.ResponseApi.FluentValidation</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+    <PackageReference Include="FluentValidation" Version="10.2.3" />
   </ItemGroup>
 
   <ItemGroup>

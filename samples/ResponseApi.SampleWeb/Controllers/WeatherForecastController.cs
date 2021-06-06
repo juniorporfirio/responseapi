@@ -22,9 +22,7 @@ namespace ResponseApi.SampleWeb.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<WeatherForecast>> Get()
-        {
-            return this.ToActionResult(_service.GetWeather());
-        }
+        public ActionResult<IEnumerable<WeatherForecast>> Get() =>
+            this.ToActionResult(_service.GetWeather());
     }
 }
