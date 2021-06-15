@@ -1,5 +1,8 @@
 # ResponseApi
-A package to reponse abstraction that mapped to HTTP response codes.
+Abstractation that can mapped HTTP response codes if needed.
+
+# Give a Star! ⭐
+If you like or are using this project, please give it a star. Thanks!
 
 # How can you use this ?
 Imagine that you needs manipulate one method to return some kind of value. They might be creating something, persisting it and returning it.
@@ -23,18 +26,20 @@ public People Create(string firstName, string lastName)
 
 ```
 What's happen if you needs validate something diferent of happy path:
-*  Validate if variable people is null
+* Validate if variable people is null
 * Validate firstName, lastName with rules.
 * Use FlueValidation
 * Validate authorization
 * Manipulate errors
 
-One soluction to this approche, exceptions concerns to manager this paths, but it's painful for the consumer.
+You can use custom exceptions to manager this paths, but it's painful for the consumer.
 
 # Using Response Api it's a great ideia
-A ResponseApi pattern provides a standard, a reusable way to return multiple kinds of non-success responses from .NET services in a way that can easily be mapped to API responses types.
+
+A ResponseApi provides a standard, a reusable way to return multiple kinds of non-success responses from .NET services in a way that can easily be mapped to API responses types.
 
 # Show me code
+
 Validate if people is not null return Success = 200 or NotFound = 404 to Api Response status code.
 ```csharp
 
@@ -69,4 +74,30 @@ public ResponseApi<People> Get(int Id)
 }
 
 ```
+# Using package ResponseApi.AspNetCore
+```csharp
+    [ApiController]
+    [Route("[controller]")]
+    public class WeatherForecastController : ControllerBase
+    {
+       
+
+        private readonly ILogger<WeatherForecastController> _logger;
+        private readonly WeatherForecastService _service;
+
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, WeatherForecastService service)
+        {
+            _logger = logger;
+            _service = service;
+        }
+
+        [HttpGet]
+        public ActionResult<IEnumerable<WeatherForecast>> Get() =>
+            this.ToActionResult(_service.GetWeather());
+    }
+```
+# Build Notes
+
+Remember to update the PackageVersion in the .csproj file and then a build on master should automatically publish the new package to nuget.org.
+Add a release with form 1.0.0 to GitHub Releases in order for the package to actually be published to Nuget. Otherwise it will claim to have been successful but it will be lying to you.
 
