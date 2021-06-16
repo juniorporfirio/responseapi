@@ -1,11 +1,12 @@
 name: .NETCore+Tests
 
 on:
+  workflow_dispatch:
+    branches: [ main ]
   push:
-    branches: 
-    - '*'
-    - '!main'
-
+    branches: [ main ]
+  pull_request:
+    branches: [ main ] 
 jobs:
   build:
     runs-on: ubuntu-latest
