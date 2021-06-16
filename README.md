@@ -58,6 +58,18 @@ public ResponseApi<People> Get(int Id)
 }
 
 ```
+
+Validate if people is any return Success = 200 or NotFound = 404 to Api Response status code.
+```csharp
+
+// Logic to get one people
+public ResponseApi<IEnumerable<People>> Get(int Id)
+{
+  var people = _peopleRepository.All();
+  return ResponseApi<IEnumerable<People>>.Against(people).IsAny();
+}
+
+```
 Returning to Api Response status code Created = 201
 ```csharp
 
