@@ -1,4 +1,4 @@
-name: Build and Tests
+name: .netCore+Tests
 on:
   push:
     branches:
