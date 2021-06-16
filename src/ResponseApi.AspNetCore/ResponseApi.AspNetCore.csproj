@@ -2,8 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>JuniorPorfirio.ResponseApi.AspNetCore</AssemblyName>
-    <RootNamespace>JuniorPorfirio.ResponseApi.AspNetCore</RootNamespace>
+   <PackageId>JuniorPorfirio.ResponseApi</PackageId>
+    <Authors>Júnior Porfirio (@juniorporfirio)</Authors>
+    <Company>juniorporfirio.medium.com</Company>
+	<PackageProjectUrl>https://github.com/juniorporfirio/responseapi</PackageProjectUrl>
+	<RepositoryUrl>https://github.com/juniorporfirio/responseapi</RepositoryUrl>
+    <Description>A ResponseApi provides a standard, a reusable way to return multiple kinds of non-success responses from .NET services in a way that can easily be mapped to API responses types.</Description>
+    <PackageTags>fluent api status code mapping response aspnet core controller restfull rest easy</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	  <Version>1.0.0</Version> 
   </PropertyGroup>
 
   <ItemGroup>

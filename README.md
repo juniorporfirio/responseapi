@@ -1,7 +1,6 @@
-# Using Response Api it's a great ideia
+# Using Response Api it's a great idea
 
-A ResponseApi provides a standard, a reusable way to return multiple kinds of non-success responses from .NET services in a way that can easily be mapped to API responses types.# ResponseApi
-A  package abstractation that can mapped HTTP response codes if needed.
+A ResponseApi provides a standard, a reusable way to return multiple kinds of non-success responses from .NET services in a way that can easily be mapped to API responses types.
 
 # Give a Star! ⭐
 If you like or are using this project, please give it a star. Thanks!

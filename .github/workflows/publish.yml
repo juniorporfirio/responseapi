@@ -1,13 +1,13 @@
 name: Publish ResponseApi to nuget
 on:
   push:
-    branches:
-    - main
+    branches: [main]
 env:
-  PROJECT_PATH: 'src/ResponseApi/ResponseApi.csproj'
+  PATH_RESPONSEAPI: "src/ResponseApi/ResponseApi.csproj"
+  PATH_ASPNETCORE: "src/ResponseApi.AspNetCore/ResponseApi.AspNetCore.csproj"
+  PATH_FLUENTVALIDATION: "src/ResponseApi.FluentValidation/ResponseApi.FluentValidation.csproj"
 jobs:
-  build-test-publish:
-    name: publish to nuget
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -23,12 +23,30 @@ jobs:
         run: dotnet build --configuration Release --no-restore
         # Tests
       - name: Test
-        run: dotnet test     
-# Publish
-      - name: publish on version change
+        run: dotnet test
+      # Publish
+      - name: Publish JuniorPorfirio.ResponseApi
         uses: rohith/publish-nuget@v2
         with:
-          PROJECT_FILE_PATH: ${{env.PROJECT_PATH}} # Relative to repository root
+          PROJECT_FILE_PATH: ${{env.PATH_RESPONSEAPI}} # Relative to repository root
+          # VERSION_FILE_PATH: Directory.Build.props # Filepath with version info, relative to repository root. Defaults to project file
+          VERSION_REGEX: <Version>(.*)<\/Version> # Regex pattern to extract version info in a capturing group
+          TAG_COMMIT: true # Flag to enable / disable git tagging
+          TAG_FORMAT: v* # Format of the git tag, [*] gets replaced with version
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}} # nuget.org API key
+      - name: Publish JuniorPorfirio.ResponseApi.AspNetCore
+        uses: rohith/publish-nuget@v2
+        with:
+          PROJECT_FILE_PATH: ${{env.PATH_ASPNETCORE}} # Relative to repository root
+          # VERSION_FILE_PATH: Directory.Build.props # Filepath with version info, relative to repository root. Defaults to project file
+          VERSION_REGEX: <Version>(.*)<\/Version> # Regex pattern to extract version info in a capturing group
+          TAG_COMMIT: true # Flag to enable / disable git tagging
+          TAG_FORMAT: v* # Format of the git tag, [*] gets replaced with version
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}} # nuget.org API key
+      - name: Publish JuniorPorfirio.ResponseApi.FluentValidation
+        uses: rohith/publish-nuget@v2
+        with:
+          PROJECT_FILE_PATH: ${{env.PATH_FLUENTVALIDATION}} # Relative to repository root
           # VERSION_FILE_PATH: Directory.Build.props # Filepath with version info, relative to repository root. Defaults to project file
           VERSION_REGEX: <Version>(.*)<\/Version> # Regex pattern to extract version info in a capturing group
           TAG_COMMIT: true # Flag to enable / disable git tagging
