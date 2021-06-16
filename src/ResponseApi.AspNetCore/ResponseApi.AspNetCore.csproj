@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-   <PackageId>JuniorPorfirio.ResponseApi</PackageId>
+   <PackageId>JuniorPorfirio.ResponseApi.AspNetCore</PackageId>
     <Authors>Júnior Porfirio (@juniorporfirio)</Authors>
     <Company>juniorporfirio.medium.com</Company>
 	<PackageProjectUrl>https://github.com/juniorporfirio/responseapi</PackageProjectUrl>
