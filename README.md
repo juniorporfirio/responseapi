@@ -1,3 +1,12 @@
+[![NuGet](https://img.shields.io/nuget/v/JuniorPorfirio.ResponseApi.svg?label=JuniorPorfirio.ResponseApi%20-%20nuget)](https://www.nuget.org/packages/JuniorPorfirio.ResponseApi) [![NuGet](https://img.shields.io/nuget/dt/JuniorPorfirio.ResponseApi.svg)](https://www.nuget.org/packages/JuniorPorfirio.ResponseApi)
+
+[![JuniorPorfirio.ResponseApi.AspNetCore-NuGet](https://img.shields.io/nuget/v/JuniorPorfirio.ResponseApi.AspNetCore.svg?label=JuniorPorfirio.ResponseApi.AspNetCore%20-%20nuget)](https://www.nuget.org/packages/JuniorPorfirio.ResponseApi.AspNetCore) [![NuGet](https://img.shields.io/nuget/dt/JuniorPorfirio.ResponseApi.AspNetCore.svg)](https://www.nuget.org/packages/JuniorPorfirio.ResponseApi.AspNetCore)
+
+[![JuniorPorfirio.ResponseApi.FluentValidation-NuGet](https://img.shields.io/nuget/v/JuniorPorfirio.ResponseApi.FluentValidation.svg?label=JuniorPorfirio.ResponseApi.FluentValidation%20-%20nuget)](https://www.nuget.org/packages/JuniorPorfirio.ResponseApi.FluentValidation) [![NuGet](https://img.shields.io/nuget/dt/JuniorPorfirio.ResponseApi.FluentValidation.svg)](https://www.nuget.org/packages/JuniorPorfirio.ResponseApi.FluentValidation)
+
+[![.NETCore+Tests](https://github.com/juniorporfirio/responseapi/actions/workflows/dotnet.yml/badge.svg)](https://github.com/juniorporfirio/responseapi/actions/workflows/dotnet.yml)
+
+
 # Using Response Api it's a great idea
 
 A ResponseApi provides a standard, a reusable way to return multiple kinds of non-success responses from .NET services in a way that can easily be mapped to API responses types.
