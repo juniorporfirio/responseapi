@@ -1,5 +1,7 @@
-# ResponseApi
-Abstractation that can mapped HTTP response codes if needed.
+# Using Response Api it's a great ideia
+
+A ResponseApi provides a standard, a reusable way to return multiple kinds of non-success responses from .NET services in a way that can easily be mapped to API responses types.# ResponseApi
+A  package abstractation that can mapped HTTP response codes if needed.
 
 # Give a Star! ⭐
 If you like or are using this project, please give it a star. Thanks!
@@ -34,11 +36,8 @@ What's happen if you needs validate something diferent of happy path:
 
 You can use custom exceptions to manager this paths, but it's painful for the consumer.
 
-# Using Response Api it's a great ideia
 
-A ResponseApi provides a standard, a reusable way to return multiple kinds of non-success responses from .NET services in a way that can easily be mapped to API responses types.
-
-# Show me code
+# Fix using ResponseApi
 
 Validate if people is not null return Success = 200 or NotFound = 404 to Api Response status code.
 ```csharp
@@ -63,7 +62,7 @@ public ResponseApi<People> Create(string firstName, string lastName)
 }
 
 ```
-Validate if people is not exception return Success = 200 or Invalid = 500 to Api Response status code.
+Validate if people is not exception return Success = 200 or Error = 500 to Api Response status code.
 ```csharp
 
 // Logic to get one people
@@ -72,8 +71,20 @@ public ResponseApi<People> Get(int Id)
   var people = _peopleRepository.One(Id);
   return ResponseApi<People>.IsError(()=>people);
 }
-
 ```
+# Using package ResponseApi.FluentValidation
+
+Validate if people is valid, return Success=200, or Invalid = 400 with messages of FluentValidation.
+
+```csharp
+public ResponseApi<People> Create(People people)
+{
+  var validator = new PeopleValidator();
+  var validate = validator.Validate(people);
+  return ResponseApi<People>.Against(people).IsInvalid(validate);
+}
+```
+
 # Using package ResponseApi.AspNetCore
 ```csharp
     [ApiController]

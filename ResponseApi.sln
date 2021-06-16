@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{E3DA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResponseApi.FluentValidation", "src\ResponseApi.FluentValidation\ResponseApi.FluentValidation.csproj", "{50619C1D-F305-4017-8F9D-A73372506C4B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResponseApi.FluentValidation.UnitTests", "test\ResponseApi.FluentValidation.UnitTests\ResponseApi.FluentValidation.UnitTests.csproj", "{EB0B5ACD-F99A-4DDE-9F0C-99B2C6942D00}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{50619C1D-F305-4017-8F9D-A73372506C4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50619C1D-F305-4017-8F9D-A73372506C4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50619C1D-F305-4017-8F9D-A73372506C4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB0B5ACD-F99A-4DDE-9F0C-99B2C6942D00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB0B5ACD-F99A-4DDE-9F0C-99B2C6942D00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB0B5ACD-F99A-4DDE-9F0C-99B2C6942D00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB0B5ACD-F99A-4DDE-9F0C-99B2C6942D00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{72F18E46-1989-42A9-8478-E9CCC4FC3603} = {7695135A-F2FE-49D7-85FC-D2CCDD4F7416}
 		{A7EC54C3-C7EC-4D42-9F09-7448EA0A7E57} = {E3DACE43-3AE4-4799-B8F9-C8BCAFCA8FC8}
 		{50619C1D-F305-4017-8F9D-A73372506C4B} = {7695135A-F2FE-49D7-85FC-D2CCDD4F7416}
+		{EB0B5ACD-F99A-4DDE-9F0C-99B2C6942D00} = {AB29622B-7DBC-42DD-888B-319CF7511D6D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9FA2559B-C3CA-45EE-B890-38031039E166}

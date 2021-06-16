@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\ResponseApi\ResponseApi.csproj" />
+    <ProjectReference Include="..\..\src\ResponseApi.FluentValidation\ResponseApi.FluentValidation.csproj" />
   </ItemGroup>
 
 </Project>
